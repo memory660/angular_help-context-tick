@@ -1,0 +1,13 @@
+<ng-content></ng-content>
+
+<div class="context-help-container" #container>
+  <i (click)="showHelp = true"></i>
+  <div
+    *ngIf="showHelp"
+    class="context-help-dialog"
+    (document:click)="documentClicked($event)"
+    (window:keydown.Escape)="escapedClicked()"
+  >
+    {{ content }}
+  </div>
+</div>
